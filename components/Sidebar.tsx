@@ -16,7 +16,7 @@ const Sidebar = () => {
 
     return (
         <div>
-            <div className="block xl:hidden m-2 ml-4 mt-3 text-xl" onClick={() => setShowSidebar((prev) => !prev)}>
+            <div className="block m-2 ml-4 mt-3 text-xl" onClick={() => setShowSidebar((prev) => !prev)}>
                 {showSidebar ? <ImCancelCircle /> : <AiOutlineMenu />}
             </div>
             {showSidebar && (
@@ -33,28 +33,6 @@ const Sidebar = () => {
                             </div>
                         </Link>
                     </div>
-                    {!userProfile && (
-                        <div className='px-2 py-4 hidden xl:block'>
-                            <p className='text-gray-400'>登入以在影片點讚及留言</p>
-                            <div className="pr-4">
-                                <GoogleLogin
-                                    clientId=""
-                                    render={renderProps => (
-                                        <button
-                                            className='cursor-pointer bg-white text-lg text-[#F51997] border-[1px] border-[#F51997] font-semibold px-6 py-3 rounded-md outline-none w-full mt-3 hover:text-white hover:bg-[#F51997]'
-                                            onClick={renderProps.onClick}
-                                            disabled={renderProps.disabled}
-                                        >
-                                            Login
-                                        </button>
-                                    )}
-                                    onSuccess={() => { }}
-                                    onFailure={() => { }}
-                                    cookiePolicy="single_host_origin"
-                                />
-                            </div>
-                        </div>
-                    )}
                     <Discover />
                     <SuggestedAccounts />
                     <Footer />
