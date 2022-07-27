@@ -16,18 +16,18 @@ const Sidebar = () => {
 
     return (
         <div>
-            <div className="block m-2 ml-4 mt-3 text-xl" onClick={() => setShowSidebar((prev) => !prev)}>
+            <div className="block xl:hidden m-2 ml-4 mt-3 text-xl" onClick={() => setShowSidebar((prev) => !prev)}>
                 {showSidebar ? <ImCancelCircle /> : <AiOutlineMenu />}
             </div>
             {showSidebar && (
-                <div className="lg:w-44 xl:w-400 flex flex-col justify-start mb-10 border-r-2 border-gray-100 xl:border-0 p-3">
+                <div className="xl:w-400 w-40 flex flex-col justify-start mb-10 border-r-2 border-gray-100 xl:border-0 p-3">
                     <div className="xl:border-b-2 border-gray-200 xl:pb-4">
                         <Link href="/">
                             <div className={normalLink}>
                                 <p className='text-2xl'>
                                     <AiFillHome />
                                 </p>
-                                <span className="text-xl hidden xl:block">
+                                <span className="capitalize text-xl hidden xl:block">
                                     For You
                                 </span>
                             </div>
