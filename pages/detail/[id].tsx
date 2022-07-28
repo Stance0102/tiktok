@@ -47,13 +47,13 @@ const Detail = ({ postDetails }: IProps) => {
         }
     }
 
-    if (!post) return null
-
     useEffect(() => {
         if (post && videoRef?.current) {
             videoRef.current.muted = isVideoMuted
         }
     }, [post, isVideoMuted])
+
+    if (!post) return null
 
     return (
         <div className="flex w-full absolute left-0 top-0 bg-white flex-wrap lg:flex-nowrap">
