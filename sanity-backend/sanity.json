@@ -7,6 +7,11 @@
     "projectId": "7rpuhu3a",
     "dataset": "production"
   },
+  "scripts": {
+    "start": "sanity start",
+    "test": "sanity check",
+    "build": "sanity build public -y"
+  },
   "plugins": [
     "@sanity/base",
     "@sanity/default-layout",
