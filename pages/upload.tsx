@@ -97,7 +97,7 @@ const Upload = () => {
                                 ) : (
                                     <label className="cursor-pointer">
                                         <div className="flex flex-col items-center justify-center h-full">
-                                            <div className="flex flex-col items-center justify-center">
+                                            <div className="flex flex-col items-center justify-center mt-8">
                                                 <p className="font-bold text-xl">
                                                     <FaCloudUploadAlt className='text-gray-300 text-6xl' />
                                                 </p>
