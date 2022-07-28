@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -9,9 +9,15 @@ import { IoMdAdd } from 'react-icons/io'
 import Logo from '../utils/tiktik-logo.png'
 import { createOrGetUser } from '../utils'
 import useAuthStore from '../store/authStore'
+import { IUser } from '../types'
 
 const Navbar = () => {
+    const [user, setUser] = useState<IUser | null>();
     const { userProfile, addUser, removeUser } = useAuthStore()
+
+    useEffect(() => {
+        setUser(userProfile);
+    }, [userProfile]);
 
     return (
         <div className='w-full flex justify-between items-center border-b-2 border-gray-200 py-2 px-4'>
@@ -32,14 +38,14 @@ const Navbar = () => {
                                 <span className="hidden md:block">Upload</span>
                             </button>
                         </Link>
-                        {userProfile.image && (
+                        {user?.image && (
                             <Link href="/">
                                 <>
                                     <Image
                                         width={40}
                                         height={40}
                                         className="rounded-full cursor-pointer"
-                                        src={userProfile.image}
+                                        src={user.image}
                                     />
                                 </>
                             </Link>
