@@ -12,6 +12,5 @@ export default async function handler(req: NextApiRequest,
         } else {
             res.json([])
         }
-
     }
 }
